@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a 5911 cricket club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="cricketTeamForm" action="https://httpbin.org/post" method="post"  aria-labelledby="formTitle">
+        <h1 id="formTitle">Join a 5911 cricket club</h1>
+        <!-- Name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" aria-required="true" aria-describedby="nameError">
+        <span id="nameError" class="error" aria-live="assertive"></span>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" aria-required="true" aria-describedby="emailError">
+        <span id="emailError" class="error" aria-live="assertive"></span>
+
+        <!-- Player Role (Radio Button) -->
+        <fieldset>
+            <legend>Preferred Role:</legend>
+            <label for="batsman">
+                <input type="radio" id="batsman" name="role" value="Batsman" aria-required="true" aria-label="Batsman"> Batsman
+            </label>
+            <label for="bowler">
+                <input type="radio" id="bowler" name="role" value="Bowler" aria-label="Bowler"> Bowler
+            </label>
+            <label for="allrounder">
+                <input type="radio" id="allrounder" name="role" value="All-Rounder" aria-label="All-Rounder"> All-Rounder
+            </label>
+            <label for="wicketkeeper">
+                <input type="radio" id="wicketkeeper" name="role" value="Wicketkeeper" aria-label="Wicketkeeper"> Wicketkeeper
+            </label>
+            <span id="roleError" class="error" aria-live="assertive"></span>
+        </fieldset>
+    
+        <!-- Skills (Checkboxes) -->
+        <fieldset>
+            <legend>Skills (Check all skills that apply):</legend>
+            <label for="fastBowling">
+                <input type="checkbox" id="fastBowling" name="skills" value="Fast Bowling"  aria-label="Fast Bowling"> Fast Bowling
+            </label>
+            <label for="spinBowling">
+                <input type="checkbox" id="spinBowling" name="skills" value="Spin Bowling" aria-label="Spin Bowling"> Spin Bowling
+            </label>
+            <label for="batting">
+                <input type="checkbox" id="batting" name="skills" value="Batting" aria-label="Batting"> Batting
+            </label>
+            <label for="fielding">
+                <input type="checkbox" id="fielding" name="skills" value="Fielding" aria-label="Fielding"> Fielding
+            </label>
+            <span id="skillsError" class="error" aria-live="assertive"></span>
+        </fieldset>
+  
+        <!-- Preferred Batting Order (Dropdown Menu) -->
+        <label for="battingOrder">Preferred Batting Order:</label>
+        <select id="battingOrder" name="battingOrder" aria-required="true" aria-describedby="battingOrderError">
+            <option value="" disabled selected>choose an option</option>
+            <option value="Opener">Opener</option>
+            <option value="Middle Order">Middle Order</option>
+            <option value="Lower Order">Lower Order</option>
+        </select>
+        <span id="battingOrderError" class="error" aria-live="assertive"></span>
+        
+        <!-- Player Code (Regex Validation) -->
+        <label for="playerCode">Player Code (Format: ABC-123):</label>
+        <input type="text" id="playerCode" name="playerCode" pattern="[A-Z]{3}-\d{3}" title="Must be in format ABC-123" aria-describedby="playerCodeError">
+        <span id="playerCodeError" class="error" aria-live="assertive"></span>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"  aria-describedby="dobError">
+        <span id="dobError" class="error"  aria-live="assertive"></span>
+
+        <!-- Cricketing Experience (Text Area) -->
+        <label for="experience">Cricket Experience:</label>
+        <textarea id="experience" name="experience" rows="4" cols="50" placeholder="Describe your experience in cricket..." aria-describedby="experienceError"></textarea>
+        <span id="experienceError" class="error"></span>
+
+        <!-- Submit Button -->
+        <button type="submit">Join the team</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
